@@ -1,11 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import { CustomDirectiveDirective } from './custom-directive/custom-directive.directive';
+import { CustomDirectiveWithInputDirective } from './custom-directive/custom-directive-with-input.directive';
+import { CustomDirectiveWithListenerDirective } from './custom-directive/custom-directive-with-listener.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomDirectiveDirective,
+    CustomDirectiveWithInputDirective,
+    CustomDirectiveWithListenerDirective
   ],
   imports: [
     BrowserModule
@@ -13,4 +19,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

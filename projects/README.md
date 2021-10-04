@@ -1,8 +1,12 @@
+[//]: # (TODO - Tartalomjegyzék témakörönként)
+
 ## Intro
 
-## Elméleti alapok
+## Basic concepts
 
-### Kis történelem
+[//]: # (TODO - Basic concepts - Detail)
+
+### Brief history
 
 Java - 1995 - Beta, 1996 - 1.0  
 JavaScript - 1996 -> 1997 ECMAScript  
@@ -13,7 +17,7 @@ Angular - 2016
 
 ### EcmaScript
 
-[ES6](./00-ES6-TypeScript/ES6.md)  
+[ES6](./projects/WS00-ES6-TypeScript/WS00-01-ES6.md)  
 Egy JavaScript szabvány, ami egy fedél alá akarta hozni a különböző JS funkciókat, libraryket, egy fő gerincet,
 csapásvonalat teremtve a nyelvnek. ES6 - EcmaScript 2015 - 6th Edition - Ez a verzió hozta az igazi áttörést, rengeteg
 új featuret bevezetve a nyelvbe. ES6 újdonságok
@@ -24,7 +28,8 @@ csapásvonalat teremtve a nyelvnek. ES6 - EcmaScript 2015 - 6th Edition - Ez a v
 
 ### Typescript
 
-[TypeScript](./00-ES6-TypeScript/TypeScript.md)  
+[TypeScript](./projects/WS00-ES6-TypeScript/WS00-02-TypeScript.md)  
+[More on TypeScript](./projects/WS00-ES6-TypeScript/WS00-03-More-On-TypeScript.md)  
 A Typescript a JavaScript super-set-je, ez röviden annyit jelent hogy a JS-t bővíti ki extra funkcionalitással,
 kiegészítésekkel. Talán a legnagyobb haszna és előnye, hogy bevezeti a JS-be a statikus típusosságot. Fontos tudni, hogy
 ezt a nyelvet már a böngészők nem tudják kezelni, ezért ez le lesz fordítva JS-re.
@@ -34,9 +39,9 @@ ezt a nyelvet már a böngészők nem tudják kezelni, ezért ez le lesz fordít
 [NodeJs bővebben](./01-NodeJS-NPM/NodeJS.md)  
 A NodeJS egy JavaScript futtató környezet, általa lehetőségünk van böngészőn kívül futtatni JavaScript kódot.
 
-### Mi is az az Angular?
+### What IS Angular?
 
-Dióhéjban
+In a nutshell
 
 - AngularJS - Release Date: 2010
 - Angular2 avagy AngularV2 and above - Release Date: 2016
@@ -44,60 +49,115 @@ Dióhéjban
 - Google fejleszti
 - Cross platform  
   További framework, pl Ionic segítségével lehetőségünk van mobilra is fejleszteni
-    - Kézenfekvő, hiszen egy már ismert keretrendszer segítségével tudunk fejleszteni
-    - Ez gyorsabb, hatékonyabb fejlesztést, karbantartást biztosít számunkra
-    - Nagyobb teljesítmény és erőforrásigénye van ezeknek az alkalmazásoknak
+  - Kézenfekvő, hiszen egy már ismert keretrendszer segítségével tudunk fejleszteni
+  - Ez gyorsabb, hatékonyabb fejlesztést, karbantartást biztosít számunkra
+  - Nagyobb teljesítmény és erőforrásigénye van ezeknek az alkalmazásoknak
 - free and open source
-    - Nyilt forráskódú keretrendszer. Ezzel a fejlesztőknek lehetőségük nyílik a platform bővítésére, testreszabására
+  - Nyilt forráskódú keretrendszer. Ezzel a fejlesztőknek lehetőségük nyílik a platform bővítésére, testreszabására
 
-#### Angular építőkövei, sajátosságai:
+# Angular Modules
 
-- Two-way data-binding
-- Dependency Injection
-- Moduláris felépítés
-- Service-k
-- Komponensek - Egyéni HTML elementek
-- Annotációk használata
+## Lets dive in!
 
-### Lets dive in!
+[Angular](WS03-Angular.md)  
+[Architecture basics](WS03-Architecture-Basics.md)
 
-[Angular](./03-Angular/Angular.md)
+```shell
+ng serve WS03-Angular
+```
 
-### Angular komponense
+## Angular components
 
-[Angular komponense](./04-Angular-components/Components.md)
+[Angular components](WS04-Angular-Components.md)
 
-### Direktívák és adatkötések
+```shell
+ng serve WS04-Angular-Components
+```
 
-[Direktívák és adatkötések](./05-Angular-directives-databindings/Directives%20and%20Databindings.md)
+## Directives and databinding
 
-### Komponens interakciók
+[Directives and databinding](WS05-Angular-Directives-and-Databindings.md)
 
-[Komponens interakciók](./06-component-interaction/Component%20interaction.md)
+```shell
+ng serve WS05-Angular-Directives-and-Databindings
+```
 
-### Dependency injection
+## Component interaction
 
-[Services and Dependency Injection](./07-Services-DependencyInjection/Services%20and%20DependencyInjection.md)
+[Component interaction](WS06-Angular-Component-interaction.md)
 
-### Pipe-ok - adatok transzformálása a templateben
+```shell
+ng serve WS06-Angular-Component-interaction
+```
 
-[Pipes](./08-Pipes/Pipes.md)
+## Dependency injection
 
-### Formok
-[Forms](./09-Forms/Forms.md)
+[Services and Dependency Injection](WS07-Angular-Services-and-DependencyInjection.md)
 
-### Routing - útválasztás
+```shell
+ng serve WS07-Angular-Services-and-DependencyInjection
+```
 
-[Routing](day-3/10-Routing/Routing.md)
+## Pipes - Transforming our data
 
-### A HTTP Client és a Routing - avagy ajax, Angular és kapcsolat a szerverrel
+[Pipes](WS08-Angular-Pipes.md)
 
-[HttpClient](./11-HttpClient-Obervables/HttpClient.md)
+```shell
+ng serve WS08-Angular-Pipes
+```
 
-### Reactive Programming alapjai
+## Forms
 
-[Reactive Programming](./13-Reactive Programming/Reactive Programming.md)
+[Forms](WS09-Angular-Forms.md)
 
-### Template References - Hivatkozás a templatere a kódból
+```shell
+ng serve WS09-Angular-Forms
+```
 
-[Template References](12-Template-References/Template%20References.md)
+## Routing
+
+[Routing](WS10-Angular-Routing.md)
+
+```shell
+ng serve WS10-Angular-Routing
+```
+
+## Routing - Guards
+
+[Routing](WS11-Angular-Routing-Guards.md)
+
+```shell
+ng serve WS11-Angular-Routing-Guards
+```
+
+## The HttpClient and routing - Ajax - Connecting to the server
+
+[HttpClient](WS12-Angular-HttpClient-Observables-Intro.md)
+
+```shell
+ng serve WS12-Angular-HttpClient-Observables-Intro
+```
+
+## Template Referencing - Interacting with our template from code
+
+[Template Referencing](WS13-Angular-Template-Referencing.md)
+
+```shell
+ng serve WS13-Angular-Template-Referencing
+```
+
+## RxJs - Fundamentals of Reactive Programming
+
+[Reactive Programming](WS14-Angular-RxJs-Reactive-Programming.md)
+
+```shell
+ng serve WS14-Angular-RxJs-Reactive-Programming
+```
+
+## NgTemplate
+
+[Reactive Programming](WS15-Angular-NgTemplate.md)
+
+```shell
+ng serve WS15-Angular-NgTemplate
+```

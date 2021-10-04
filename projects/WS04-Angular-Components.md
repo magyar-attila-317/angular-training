@@ -18,14 +18,14 @@ We can go about creating our components the manual way, creating everything by h
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'app-new-component',
-    templateUrl: './new-component.component.html',
-    styleUrls: ['./new-component.component.css']
+  selector: 'app-new-component',
+  templateUrl: './new-component.component.html',
+  styleUrls: ['./new-component.component.css']
 })
 export class NewComponent {
 
-    constructor() {
-    }
+  constructor() {
+  }
 
 }
 ```
@@ -42,14 +42,14 @@ import {AppComponent} from './app.component';
 import {NewComponent} from './new-component/new-component.component.ts';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        NewComponent
-    ],
-    imports: [BrowserModule],
-    exports: [],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    NewComponent
+  ],
+  imports: [BrowserModule],
+  exports: [],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
@@ -119,7 +119,6 @@ we can do the following in our HTML template:
 
 Even better, we can put any function call or expression between these double curly braces. As long as they resolve to a
 string, Angular will have no problems displaying the results.
-
 <img src="./assets/interpolation-example.png" alt="interpolation-example" width="800" />
 
 ### Property binding
@@ -144,7 +143,7 @@ where `isDisabled` and `imageUrl` are simple field members of the corresponding 
 > Note:  
 To understand property binding, it is important to keep in mind that an HTML attribute and a DOM property are two different things. Attributes are defined by HTML, properties are accessed from DOM nodes. There are some examples, where an attribute and a property has the same name, e.g. 'disabled', but don't let this fool you. Property binding works only for properties not attributes.
 
-### Event binding
+_### Event binding_
 
 Event binding allows you to listen for certain events such as keystrokes, mouse movements, clicks, and touches. It
 represents the opposite direction of the property binding data flow, as it is view-to-source in this case.
@@ -159,26 +158,22 @@ statement on the right.
 
 `onSave()` is a method defined in the corresponding .ts file of the component. Avoid writing complex template
 statements. A method call or simple property assignment should be the norm.
-
 <img src="./assets/event-binding-example.png" alt="event-binding-example" width="800" />
+
+[//]: # (TODO - Feladatot átmásolni)
 
 ## Exercise
 
-Work in the folder named __ws02-components-and-templates__.  
-First of all, we'll need to install the dependencies listed in the __package.json__ file by executing the `npm install`
-command
-(or just `npm i` for short).  
+Work in the folder named __WS04-Angular-Components__. First of all, we'll need to install the dependencies listed in
+the __package.json__ file by executing the `npm install`command (or just `npm i` for short).  
 After that, check out the provided __.ts__ and __.html__ files under src/app, and start the app by
-running `ng serve ws02-components-and-templates`.  
-(We need to specify the project name since this is a multi-project app)
+running `ng serve WS02-Angular-Components`.(We need to specify the project name since this is a multi-project app)
 
 1. Property binding: make sure the image in the HTML file gets its `src` from the component (instead of the currently
    hardcoded string)
 2. Event binding: by clicking the button, call the method called `startChangingPictures` (don't worry about the method
    logic, it should be ok)
 3. Interpolation: make sure the correct url is displayed under the button on the page
-
-Next: [Directives](../ws03-directives)
 
 ## Further reading
 

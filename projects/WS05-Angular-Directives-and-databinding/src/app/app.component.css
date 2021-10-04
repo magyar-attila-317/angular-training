@@ -1,0 +1,22 @@
+.character {
+  display: inline-block;
+  text-align: center;
+  margin-right: 20px;
+  width: 110px;
+  border: 1px solid gray;
+  box-shadow: 2px 1px 8px 1px lightgray;
+}
+
+.boy {
+  border: 1px solid deepskyblue;
+  box-shadow: 2px 1px 8px 1px lightblue;
+}
+
+.girl {
+  border: 1px solid pink;
+  box-shadow: 2px 1px 8px 1px lightpink;
+}
+
+img {
+  height: 110px;
+}
