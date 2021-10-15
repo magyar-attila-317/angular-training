@@ -1,9 +1,16 @@
 <div class="container m-3">
   <div class="row">
     <div class="col-4">
-      <select class="form-select" aria-label="Categories">
-        <option value="0" selected>- Select a value -</option>
-        <option *ngFor="let category of categories">{{category.categoryName}}</option>
+      <select
+        class="form-select"
+        aria-label="Categories"
+        (change)="handleCategoryChange($event)"
+      >
+        <option value="{{NON_SELECTED_CATEGORY_VALUE}}" selected>- Select a value -</option>
+        <option
+          *ngFor="let category of categoryService.categories$ | async as categories"
+          [value]="category.id"
+        >{{category.categoryName}}</option>
       </select>
     </div>
   </div>
@@ -19,10 +26,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of filteredProducts$ | async as products">
           <th scope="row">{{product.id}}</th>
           <td>{{product.productName}}</td>
-          <td>{{product.categoryId}}</td>
+          <td>{{product.categoryName}}</td>
           <td>{{product.price | currency}}</td>
         </tr>
         </tbody>

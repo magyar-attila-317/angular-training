@@ -1,29 +1,45 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ProductService} from './services/product.service';
-import {CategoryModel} from './models/category.model';
 import {CategoryService} from './services/category.service';
+import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {ProductModel} from './models/product.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   title = 'WS14-Angular-RxJS-Reactive-Programming';
 
-  products: ProductModel[] = [];
-  categories: CategoryModel[] = [];
+  private readonly NON_SELECTED_CATEGORY_VALUE = 0;
+  public categoryChangeSubject: BehaviorSubject<number> = new BehaviorSubject<number>(this.NON_SELECTED_CATEGORY_VALUE);
+  public filteredProducts$: Observable<ProductModel[]>;
 
-  constructor(private productService: ProductService, private categoryService: CategoryService) {
+  constructor(public productService: ProductService,
+              public categoryService: CategoryService) {
+
+    this.filteredProducts$ = combineLatest(productService.allProductsWithCategories$, this.categoryChangeSubject)
+      .pipe(
+        map((data) => {
+          let products = data[0];
+          let categoryId = data[1];
+          if (categoryId > 0) {
+            return products.filter(p => p.categoryId === Number(categoryId));
+          } else {
+            return products;
+          }
+        })
+      );
+
   }
 
-  public ngOnInit(): void {
-    this.productService.getProducts()
-      .subscribe(products => this.products = products);
-    this.categoryService.getCategories()
-      .subscribe(categories => this.categories = categories);
-  }
+  handleCategoryChange(event: any) {
+    const newValue = event.currentTarget.value;
+    console.log('new value:', newValue);
 
+    this.categoryChangeSubject.next(newValue);
+  }
 
 }
